@@ -35,7 +35,7 @@ source ~/ros2_ws/install/setup.bash
 ```
 
 ```bash
-ros2 launch megoldas start.launch.py
+ros2 launch way_finder start.launch.py
 ```
 ```bash
 ros2 run way_finder megoldas.py
