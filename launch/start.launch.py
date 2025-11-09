@@ -18,7 +18,7 @@ def generate_launch_description():
                 'Azonosito': "1",
                 'debug': False,
                 # 'angle_range': 360,
-                'velocity': 2.00,
+                #'velocity': 20.00,
                 # 'car_length': 0.445,
                 # 'wheelbase': 0.3187,
                 # 'map_frame': 'odom_combined', ## not uses yet
