@@ -10,7 +10,7 @@ Munkakönyvtár: `~/ros2_ws/`.
 cd ~/ros2_ws/src
 ```
 ```bash
-git clone https://github.com/robotverseny/megoldas_sim24
+git clone https://github.com/barna154/way_finder
 ```
 
 ### Rviz 2D Overlay
@@ -25,7 +25,7 @@ sudo apt install ros-humble-rviz-2d-overlay*
 cd ~/ros2_ws
 ```
 ```bash
-colcon build --packages-select megoldas_sim24 --symlink-install
+colcon build --packages-select way_finder --symlink-install
 ```
 
 ### könytár futtatása
