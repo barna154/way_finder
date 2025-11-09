@@ -24,7 +24,7 @@ class FollowTheGapNode(Node):
         self.declare_parameter('Azonosito', "1")
         self.declare_parameter('debug', False)
         self.declare_parameter('safety_radius', 2.0)
-        self.declare_parameter('max_throttle', 0.5)
+        self.declare_parameter('max_throttle', 1)
         self.declare_parameter('steering_sensitivity', 0.7)
         self.declare_parameter('max_steering_angle', 0.52)
         self.declare_parameter('is_running', True)
