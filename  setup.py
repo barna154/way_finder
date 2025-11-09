@@ -23,8 +23,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'megoldas.py = megoldas_sim24.simple_pursuit:main',
-            'joystick_teleop_node = megoldas_sim24.joystick_teleop:main',
+            'megoldas.py = way_finder.megoldas:main',
+            'joystick_teleop_node = way_finder.joystick_teleop:main',
         ],
     },
 )
