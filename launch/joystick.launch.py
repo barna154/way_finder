@@ -4,7 +4,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
     return LaunchDescription([
         Node(
-            package='megoldas_sim24',
+            package='way_finder',
             executable='joystick_teleop_node',
             name='joystick_teleop',
             output='screen'
