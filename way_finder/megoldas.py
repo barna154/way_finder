@@ -23,10 +23,10 @@ class FollowTheGapNode(Node):
         self.declare_parameter('Csapatnev', "Racsecar")
         self.declare_parameter('Azonosito', "1")
         self.declare_parameter('debug', False)
-        self.declare_parameter('safety_radius', 10.0)
-        self.declare_parameter('max_throttle', 0.2)
-        self.declare_parameter('steering_sensitivity', 0.7)
-        self.declare_parameter('max_steering_angle', 0.52)
+        self.declare_parameter('safety_radius', 1.6)
+        self.declare_parameter('max_throttle', 0.3)
+        self.declare_parameter('steering_sensitivity', 1.5)
+        self.declare_parameter('max_steering_angle', 0.7)
         self.declare_parameter('is_running', True)
 
         # --- Read parameter values ---
