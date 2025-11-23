@@ -19,10 +19,10 @@ find_package(visualization_msgs REQUIRED)
 find_package(rcl_interfaces REQUIRED)
 
 add_executable(megoldas2 src/megoldas.cpp)
-ament_target_dependencies(follow_the_gap_node
+ament_target_dependencies(megoldas2
   rclcpp sensor_msgs std_msgs geometry_msgs visualization_msgs rcl_interfaces
 )
 
-install(TARGETS follow_the_gap_node
+install(TARGETS megoldas2
   DESTINATION lib/${PROJECT_NAME}
 )
