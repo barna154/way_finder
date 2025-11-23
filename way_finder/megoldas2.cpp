@@ -13,7 +13,6 @@
 #include <chrono>
 #include <thread>
 #include <string>
-source ~/ros2_ws/install/setup.bash
 
 using namespace std::chrono_literals;
 
