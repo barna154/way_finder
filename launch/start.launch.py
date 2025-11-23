@@ -28,6 +28,19 @@ def generate_launch_description():
         ]
     )
 
+    megoldas2 = Node(
+    package='way_finder',
+    executable='megoldas2',
+    output='screen',
+    parameters=[
+            {
+                'Csapatnev': "Racsecar",
+                'Azonosito': "1",
+                'debug': False,
+            }
+       ]
+    )
+
     start_rviz_2d_overlay = False
 
     try:

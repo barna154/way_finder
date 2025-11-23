@@ -1,4 +1,3 @@
-# original from: https://github.com/SZE-F1TENTH/followthegap/blob/main/megoldas/megoldas_node.py
 
 import rclpy
 from rclpy.node import Node
