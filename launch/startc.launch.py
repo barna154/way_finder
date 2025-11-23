@@ -11,7 +11,7 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='way_finder',
-            executable='megoldas2',
+            executable='megoldas2.cpp',
             output='screen',
             parameters=[{
                 'Csapatnev': 'Racsecar',
