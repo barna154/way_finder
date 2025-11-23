@@ -8,25 +8,18 @@ from launch.actions import IncludeLaunchDescription
 from ament_index_python.packages import get_package_share_directory, get_package_prefix
 
 def generate_launch_description():
-    megoldas = Node(
-        package='way_finder',
-        executable='megoldas.py',
-        output='screen',
-        parameters=[
-            {
-                'Csapatnev': "Racsecar",
-                'Azonosito': "1",
+    return LaunchDescription([
+        Node(
+            package='way_finder',
+            executable='follow_the_gap_node',
+            output='screen',
+            parameters=[{
+                'Csapatnev': 'Racsecar',
+                'Azonosito': '1',
                 'debug': False,
-                # 'angle_range': 360,
-                #'velocity': 20.00,
-                # 'car_length': 0.445,
-                # 'wheelbase': 0.3187,
-                # 'map_frame': 'odom_combined', ## not uses yet
-                # 'laser_frame': 'laser',
-                # 'base_frame': 'base_link',
-            }
-        ]
-    )
+            }]
+        )
+    ])
 
     start_rviz_2d_overlay = False
 
@@ -45,12 +38,12 @@ def generate_launch_description():
 
     if start_rviz_2d_overlay:
         return LaunchDescription([
-            megoldas,
+            megoldas2,
             str_overlay
         ])
     else:
         return LaunchDescription([
-            megoldas,
+            megoldas2,
             LogInfo(msg="Hiba: rviz_2d_overlay_plugins nem található"),
             LogInfo(msg="Install: sudo apt install ros-humble-rviz-2d-overlay*"),
         ])
