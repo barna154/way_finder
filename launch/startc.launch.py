@@ -11,7 +11,7 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='way_finder',
-            executable='follow_the_gap_node',
+            executable='megoldas2',
             output='screen',
             parameters=[{
                 'Csapatnev': 'Racsecar',
