@@ -23,8 +23,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'megoldas.py = way_finder.megoldas:main',
-            'joystick_teleop_node = way_finder.joystick_teleop:main',
+            'megoldas2.cpp = way_finder.megoldas2:main',
         ],
     },
 )
