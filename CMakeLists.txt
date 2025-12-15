@@ -32,5 +32,9 @@ install(TARGETS
   megoldas2
   DESTINATION lib/${PROJECT_NAME}
 )
-
+install(FILES
+  way_finder/launch/start.launch.py
+  way_finder/launch/string_rviz_overlay.launch.py
+  DESTINATION share/${PROJECT_NAME}/launch
+)
 ament_package()
