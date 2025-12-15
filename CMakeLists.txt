@@ -19,7 +19,11 @@ find_package(rcl_interfaces REQUIRED)
 -
 add_executable(megoldas2 way_finder/megoldas2.cpp)
 ament_target_dependencies(megoldas2
-  rclcpp sensor_msgs std_msgs geometry_msgs visualization_msgs rcl_interfaces
+  rclcpp
+  sensor_msgs
+  geometry_msgs
+  visualization_msgs
+  std_msgs
 )
 
 install(TARGETS
@@ -30,6 +34,5 @@ install(TARGETS
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}
 )
-
 
 ament_package()

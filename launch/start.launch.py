@@ -14,9 +14,6 @@ def generate_launch_description():
         output='screen',
         parameters=[
             {
-                'Csapatnev': "Racsecar",
-                'Azonosito': "1",
-                'debug': False,
                 # 'angle_range': 360,
                 #'velocity': 20.00,
                 # 'car_length': 0.445,
@@ -27,6 +24,14 @@ def generate_launch_description():
             }
         ]
     )
+    megoldas2 = Node(
+            package='way_finder',
+            executable='megoldas2',
+            output='screen',
+            parameters=[{
+                'debug': False,
+            }]
+        )
 
     start_rviz_2d_overlay = False
 
