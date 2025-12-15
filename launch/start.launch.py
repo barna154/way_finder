@@ -8,25 +8,9 @@ from launch.actions import IncludeLaunchDescription
 from ament_index_python.packages import get_package_share_directory, get_package_prefix
 
 def generate_launch_description():
-    megoldas = Node(
-        package='way_finder',
-        executable='megoldas.py',
-        output='screen',
-        parameters=[
-            {
-                # 'angle_range': 360,
-                #'velocity': 20.00,
-                # 'car_length': 0.445,
-                # 'wheelbase': 0.3187,
-                # 'map_frame': 'odom_combined', ## not uses yet
-                # 'laser_frame': 'laser',
-                # 'base_frame': 'base_link',
-            }
-        ]
-    )
     megoldas2 = Node(
             package='way_finder',
-            executable='megoldas2',
+            executable='megoldas2.cpp',
             output='screen',
             parameters=[{
                 'debug': False,
