@@ -16,7 +16,6 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(visualization_msgs REQUIRED)
 find_package(rcl_interfaces REQUIRED)
--
 add_executable(megoldas2 way_finder/megoldas2.cpp)
 ament_target_dependencies(megoldas2
   rclcpp

@@ -11,10 +11,10 @@
 
 using std::placeholders::_1;
 
-class megoldas2 : public rclcpp::Node
+class megoldas22 : public rclcpp::Node
 {
 public:
-    megoldas2() : Node("megoldas2")
+    megoldas22() : Node("megoldas22")
     {
         this->declare_parameter<bool>("debug", false);
         this->declare_parameter<double>("safety_radius", 0.63);
@@ -30,10 +30,10 @@ public:
 
         param_callback_handle_ =
             this->add_on_set_parameters_callback(
-                std::bind(&FollowTheGapNode::onParamChange, this, _1));
+                std::bind(&megoldas22::onParamChange, this, _1));
 
         scan_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
-            "/scan", 10, std::bind(&FollowTheGapNode::scanCallback, this, _1));
+            "/scan", 10, std::bind(&megoldas22::scanCallback, this, _1));
 
         cmd_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 1);
         debug_marker_pub_ =
@@ -42,7 +42,7 @@ public:
 
         timer_ = this->create_wall_timer(
             std::chrono::milliseconds(100),
-            std::bind(&FollowTheGapNode::timerCallback, this));
+            std::bind(&megoldas22::timerCallback, this));
 
         RCLCPP_INFO(this->get_logger(), "Az algoritmus elindult");
     }
@@ -140,7 +140,7 @@ private:
         visualization_msgs::msg::Marker marker;
         marker.header.frame_id = "odom_combined";
         marker.header.stamp = this->now();
-        marker.ns = "megoldas";
+        marker.ns = "megoldas2";
         marker.id = 0;
         marker.type = visualization_msgs::msg::Marker::SPHERE;
         marker.action = visualization_msgs::msg::Marker::ADD;
@@ -167,7 +167,7 @@ private:
     {
         std_msgs::msg::String msg;
         msg.data =
-            "megoldas\nmid_index: " + std::to_string(mid_index) +
+            "megoldas2\nmid_index: " + std::to_string(mid_index) +
             "\nbest_angle (deg): " + std::to_string(angle * 180.0 / M_PI) +
             "\nsteering_sensitivity: " + std::to_string(steering_sensitivity_);
         state_pub_->publish(msg);
@@ -203,7 +203,7 @@ private:
 int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<FollowTheGapNode>());
+    rclcpp::spin(std::make_shared<megoldas22>());
     rclcpp::shutdown();
     return 0;
 }
