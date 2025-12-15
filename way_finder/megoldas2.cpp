@@ -11,10 +11,10 @@
 
 using std::placeholders::_1;
 
-class megoldas22 : public rclcpp::Node
+class megoldas2 : public rclcpp::Node
 {
 public:
-    megoldas22() : Node("megoldas22")
+    megoldas2() : Node("megoldas2")
     {
         this->declare_parameter<bool>("debug", false);
         this->declare_parameter<double>("safety_radius", 0.63);
@@ -30,10 +30,10 @@ public:
 
         param_callback_handle_ =
             this->add_on_set_parameters_callback(
-                std::bind(&megoldas22::onParamChange, this, _1));
+                std::bind(&megoldas2::onParamChange, this, _1));
 
         scan_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
-            "/scan", 10, std::bind(&megoldas22::scanCallback, this, _1));
+            "/scan", 10, std::bind(&megoldas2::scanCallback, this, _1));
 
         cmd_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 1);
         debug_marker_pub_ =
@@ -42,7 +42,7 @@ public:
 
         timer_ = this->create_wall_timer(
             std::chrono::milliseconds(100),
-            std::bind(&megoldas22::timerCallback, this));
+            std::bind(&megoldas2::timerCallback, this));
 
         RCLCPP_INFO(this->get_logger(), "Az algoritmus elindult");
     }
@@ -203,7 +203,7 @@ private:
 int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<megoldas22>());
+    rclcpp::spin(std::make_shared<megoldas2>());
     rclcpp::shutdown();
     return 0;
 }
