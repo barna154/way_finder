@@ -31,6 +31,10 @@ source ~/ros2_ws/install/setup.bash
 ros2 launch way_finder start.launch.py
 ```
 
-### Tesztelés
-## https://github.com/robotverseny/robotverseny_gazebo24/
+## Tesztelés
+### A tesztelő környezet az alábbi linken található:
+### https://github.com/robotverseny/robotverseny_gazebo24/
+
+
+## Bemutatott projekt
 
