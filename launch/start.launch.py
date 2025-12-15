@@ -1,45 +1,40 @@
-import os
 from launch import LaunchDescription
-from launch.actions import LogInfo
-from launch_ros.actions import Node
+from launch.actions import LogInfo, IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
-from launch.actions import IncludeLaunchDescription
-from ament_index_python.packages import get_package_share_directory, get_package_prefix
+from ament_index_python.packages import get_package_prefix
+
 
 def generate_launch_description():
-    megoldas2 = Node(
-            package='way_finder',
-            executable='megoldas2.cpp',
-            output='screen',
-            parameters=[{
-                'debug': False,
-            }]
-        )
 
-    start_rviz_2d_overlay = False
+    megoldas2 = Node(
+        package='way_finder',
+        executable='megoldas2',
+        name='megoldas',
+        output='screen'
+    )
+
+    actions = [megoldas2]
 
     try:
-        package_path = get_package_prefix('rviz_2d_overlay_plugins')
+        get_package_prefix('rviz_2d_overlay_plugins')
 
-        str_overlay = IncludeLaunchDescription(
+        overlay_launch = IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
-            FindPackageShare("way_finder"), '/string_rviz_overlay.launch.py'])
+                FindPackageShare('way_finder'),
+                '/launch/string_rviz_overlay.launch.py'
+            ])
         )
-        start_rviz_2d_overlay = True
-    except:
-        print("rviz_2d_overlay_plugins nem található")
-        start_rviz_2d_overlay = False
 
+        actions.append(overlay_launch)
 
-    if start_rviz_2d_overlay:
-        return LaunchDescription([
-            megoldas,
-            str_overlay
-        ])
-    else:
-        return LaunchDescription([
-            megoldas,
-            LogInfo(msg="Hiba: rviz_2d_overlay_plugins nem található"),
-            LogInfo(msg="Install: sudo apt install ros-humble-rviz-2d-overlay*"),
-        ])
+    except Exception:
+        actions.append(
+            LogInfo(msg="Hiba: rviz_2d_overlay_plugins nem található")
+        )
+        actions.append(
+            LogInfo(msg="Install: sudo apt install ros-humble-rviz-2d-overlay*")
+        )
+
+    return LaunchDescription(actions)
