@@ -7,7 +7,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(visualization_msgs REQUIRED)
 
-add_executable(megoldas2 src/megoldas2.cpp)
+add_executable(megoldas2 way_finder/megoldas2.cpp)
 
 ament_target_dependencies(megoldas2
   rclcpp
