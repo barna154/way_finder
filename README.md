@@ -32,9 +32,10 @@ ros2 launch way_finder start.launch.py
 ```
 
 ## Tesztelés
-### A tesztelő környezet az alábbi linken található:
-### https://github.com/robotverseny/robotverseny_gazebo24/
+### A tesztelő környezet az alábbi linken található: 
+#### https://github.com/robotverseny/robotverseny_gazebo24/
 
 
 ## Bemutatott projekt
-
+### A projekthez egy WheelTec rosbot mini volt használva
+<img src="img/robot.jpg" alt="Rosbot mini" width="800">
