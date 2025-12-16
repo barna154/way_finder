@@ -1,5 +1,5 @@
 # Robot irányítás lidar segítségével iskolai projekthez
-ROS 2 python package ![Static Badge](https://img.shields.io/badge/ROS_2-Humble-34aec5)[![Static Badge](https://img.shields.io/badge/ROS2-Jazzy-blue)](https://docs.ros.org/en/humble/)
+ROS 2 c++ package ![Static Badge](https://img.shields.io/badge/ROS_2-Humble-34aec5)[![Static Badge](https://img.shields.io/badge/ROS2-Jazzy-blue)](https://docs.ros.org/en/humble/)
 ## Telepítés
 
 Munkakönyvtár: `~/ros2_ws/`.
@@ -39,3 +39,7 @@ ros2 launch way_finder start.launch.py
 ## Bemutatott projekt
 ### A projekthez egy WheelTec rosbot mini volt használva
 <img src="img/robot.jpg" alt="Rosbot mini" width="800">
+
+
+## Forrás
+A projekt a https://github.com/robotverseny/megoldas_sim24 Follow the Gap típúsú megoldása alapján készült.
